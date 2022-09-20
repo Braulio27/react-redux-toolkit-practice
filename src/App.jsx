@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
-import { increment } from './store/slices/counter';
+import { decrement, increment, incrementBy } from './store/slices/counter';
 
 function App() {
 
@@ -9,14 +9,23 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => dispath(increment())}>
-          count is {counter}
-        </button>
-        <p>
-        </p>
-      </div>
+      <header>
+        <h1>Vite + React</h1>
+        <p>count is {counter}</p>
+        <div className="card">
+          <button onClick={() => dispath(increment())}>
+            Increment
+          </button>
+          <button onClick={() => dispath(decrement())}>
+            Decrement
+          </button>
+          <button onClick={() => dispath(incrementBy(2))}>
+            Increment by 2
+          </button>
+          <p>
+          </p>
+        </div>
+      </header>
     </div>
   )
 }
