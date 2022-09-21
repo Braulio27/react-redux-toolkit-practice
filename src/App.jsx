@@ -5,7 +5,7 @@ import { decrement, increment, incrementBy } from './store/slices/counter';
 function App() {
 
   const { counter } = useSelector(state => state.counter)
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <div className="App">
@@ -13,13 +13,13 @@ function App() {
         <h1>Vite + React</h1>
         <p>count is {counter}</p>
         <div className="card">
-          <button onClick={() => dispath(increment())}>
+          <button onClick={() => dispatch(increment())}>
             Increment
           </button>
-          <button onClick={() => dispath(decrement())}>
+          <button onClick={() => dispatch(decrement())}>
             Decrement
           </button>
-          <button onClick={() => dispath(incrementBy(2))}>
+          <button onClick={() => dispatch(incrementBy(2))}>
             Increment by 2
           </button>
           <p>
